@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Drive Quick Travels</title>
+  <meta name="description" content="Send a trip enquiry to Drive Quick Travels. Tell us the destination, dates and who is travelling.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-bar">
+      <a class="logo" href="index.html">Drive Quick <span>Travels</span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-end">
+        <a class="btn btn-sm" href="contact.html">Plan a trip</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+          <i></i><i></i><i></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" style="min-height: 38vh">
+      <img class="cover-bg" src="assets/photos/kerala.jpg" alt="" width="1400" height="788" fetchpriority="high">
+      <div class="veil" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <p class="eyebrow eyebrow-light">Contact</p>
+        <h1>Tell us the trip.</h1>
+        <p class="lead lead-light">Destination, rough dates and who is travelling are enough to start.</p>
+      </div>
+    </section>
+
+    <div class="section">
+      <div class="wrap contact-layout">
+        <section class="panel" aria-labelledby="form-title">
+          <h2 id="form-title">Enquiry</h2>
+          <form id="enquiry" novalidate>
+            <p class="hint">This prepares a message you can copy or send straight to WhatsApp.</p>
+            <label>
+              <span>Name <span class="req" aria-hidden="true">*</span></span>
+              <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+              <span class="field-error" id="name-error"></span>
+            </label>
+            <label>
+              <span>Phone <span class="req" aria-hidden="true">*</span></span>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="phone-error">
+              <span class="field-error" id="phone-error"></span>
+            </label>
+            <label>
+              <span>Email</span>
+              <input id="email" name="email" type="email" autocomplete="email" aria-describedby="email-error">
+              <span class="field-error" id="email-error"></span>
+            </label>
+            <label>
+              <span>What do you need? <span class="req" aria-hidden="true">*</span></span>
+              <select id="service" name="service" required aria-describedby="service-error">
+                <option value="">Choose a service</option>
+                <option value="domestic">Domestic package</option>
+                <option value="honeymoon">Honeymoon and couples</option>
+                <option value="family">Family holiday</option>
+                <option value="groups">Friends and groups</option>
+                <option value="international">International trip</option>
+                <option value="ticketing">Ticketing</option>
+                <option value="visa">Visa assistance</option>
+                <option value="umrah">Umrah and pilgrimage</option>
+                <option value="corporate">Corporate and MICE</option>
+                <option value="hotels">Hotels and transport</option>
+              </select>
+              <span class="field-error" id="service-error"></span>
+            </label>
+            <label>
+              <span>Destination</span>
+              <input id="destination" name="destination" type="text" list="places" placeholder="Kashmir, Dubai, or still deciding">
+            </label>
+            <datalist id="places">
+              <option value="Kashmir"></option>
+              <option value="Manali and Himachal"></option>
+              <option value="Rajasthan"></option>
+              <option value="Kerala"></option>
+              <option value="Goa"></option>
+              <option value="Karnataka"></option>
+              <option value="Tamil Nadu"></option>
+              <option value="Dubai"></option>
+              <option value="Southeast Asia"></option>
+              <option value="Maldives"></option>
+              <option value="Sri Lanka"></option>
+            </datalist>
+            <label>
+              <span>Preferred dates</span>
+              <input id="dates" name="dates" type="text" placeholder="12–18 May, or flexible">
+            </label>
+            <label>
+              <span>Travellers</span>
+              <input id="travellers" name="travellers" type="number" min="1" max="99" inputmode="numeric">
+            </label>
+            <label>
+              <span>Anything else</span>
+              <textarea id="message" name="message" placeholder="Stay style, flights, visa, or a tempo traveller"></textarea>
+            </label>
+            <button class="btn" type="submit">Prepare enquiry</button>
+          </form>
+
+          <div id="confirm" class="confirm" hidden tabindex="-1">
+            <h2>Enquiry ready to send</h2>
+            <p class="hint">Send it on WhatsApp, or copy it into an email. Nothing has been submitted to a server.</p>
+            <pre class="summary" id="summary"></pre>
+            <div class="actions">
+              <a class="btn" id="send-whatsapp" data-wa-base="https://wa.me/91XXXXXXXXXX" href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L4 20.5l1.4-4.6A8.5 8.5 0 1 1 21 11.5Z"/><path d="M9.4 9.1c.3-.6.6-.6.9-.6h.6l.9 2-.7.8c.5 1.1 1.4 2 2.5 2.5l.8-.7 2 .9v.6c0 .4-.2.8-.6 1-1 .4-2.6 0-4.2-1.3-1.4-1.2-2.6-3-2.6-4.3 0-.4 0-.7.4-.9Z"/></svg>
+                Send on WhatsApp
+              </a>
+              <button class="btn btn-ghost" type="button" id="copy-enquiry">Copy enquiry</button>
+              <button class="btn btn-ghost" type="button" id="edit-enquiry">Edit</button>
+            </div>
+          </div>
+        </section>
+
+        <div>
+          <section class="panel" aria-labelledby="reach-title">
+            <h2 id="reach-title">Reach the desk</h2>
+            <ul class="reach">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L4 20.5l1.4-4.6A8.5 8.5 0 1 1 21 11.5Z"/><path d="M9.4 9.1c.3-.6.6-.6.9-.6h.6l.9 2-.7.8c.5 1.1 1.4 2 2.5 2.5l.8-.7 2 .9v.6c0 .4-.2.8-.6 1-1 .4-2.6 0-4.2-1.3-1.4-1.2-2.6-3-2.6-4.3 0-.4 0-.7.4-.9Z"/></svg>
+                <span>
+                  <strong>WhatsApp</strong>
+                  <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">Message the desk</a>
+                </span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v3a2 2 0 0 1-2.2 2A16 16 0 0 1 5 5.2 2 2 0 0 1 7 3Z"/></svg>
+                <span>
+                  <strong>Phone</strong>
+                  <a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a>
+                </span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="m3 7.5 9 6 9-6"/></svg>
+                <span>
+                  <strong>Email</strong>
+                  <a href="mailto:hello@drivequicktravels.com">hello@drivequicktravels.com</a>
+                </span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg>
+                <span>
+                  <strong>Hours</strong>
+                  <span>Mon–Sat, 9am–7pm</span>
+                </span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="panel" aria-labelledby="next-title">
+            <h3 id="next-title">What happens next</h3>
+            <ol class="timeline">
+              <li><span><strong>We read the enquiry</strong>Destination, dates and who is travelling.</span></li>
+              <li><span><strong>We check what it takes</strong>Stays, transport, tickets, and any visa or partner steps.</span></li>
+              <li><span><strong>You get a plan</strong>A route and the moving parts, before anything is confirmed.</span></li>
+            </ol>
+            <figure class="aside-photo">
+              <img src="assets/photos/contact-aside.jpg" alt="A view of clouds from an aircraft window" width="1200" height="800" loading="lazy">
+              <figcaption>Every trip starts with a short conversation.</figcaption>
+            </figure>
+          </section>
+
+          <section class="panel faq" aria-labelledby="faq-title">
+            <h3 id="faq-title">Before you write</h3>
+            <details>
+              <summary>Can the trip be made to order?</summary>
+              <p>Yes. Domestic, honeymoon, family and group trips are shaped around who is travelling. Fixed ideas are a starting point, not the only option.</p>
+            </details>
+            <details>
+              <summary>Do you arrange flights and trains?</summary>
+              <p>Domestic and international air and rail assistance is available through appropriate channels. Ask for ticketing on its own, or as part of a package.</p>
+            </details>
+            <details>
+              <summary>How does visa help work?</summary>
+              <p>We guide the documents and support the application through suitable processes and partners. The embassy or authority decides the result.</p>
+            </details>
+            <details>
+              <summary>How is Umrah handled?</summary>
+              <p>Umrah and other pilgrimage travel is coordinated with specialist operators and authorised partners.</p>
+            </details>
+            <details>
+              <summary>Do you take office groups?</summary>
+              <p>Corporate and MICE covers business travel, meetings, incentives, conferences and the logistics of moving a group.</p>
+            </details>
+            <details>
+              <summary>Can you book only a hotel or a car?</summary>
+              <p>Yes. Hotels, airport transfers, cars and tempo travellers can be arranged without a full package.</p>
+            </details>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="index.html">Drive Quick <span>Travels</span></a>
+        <p>A holiday, travel and visa desk for trips inside India and abroad — planned, booked and coordinated end to end.</p>
+        <div class="socials">
+          <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L4 20.5l1.4-4.6A8.5 8.5 0 1 1 21 11.5Z"/><path d="M9.4 9.1c.3-.6.6-.6.9-.6h.6l.9 2-.7.8c.5 1.1 1.4 2 2.5 2.5l.8-.7 2 .9v.6c0 .4-.2.8-.6 1-1 .4-2.6 0-4.2-1.3-1.4-1.2-2.6-3-2.6-4.3 0-.4 0-.7.4-.9Z"/></svg>
+          </a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          </a>
+          <a href="mailto:hello@drivequicktravels.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="m3 7.5 9 6 9-6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="services.html#domestic">Domestic packages</a></li>
+          <li><a href="services.html#international">International</a></li>
+          <li><a href="services.html#ticketing">Ticketing</a></li>
+          <li><a href="services.html#visa">Visa assistance</a></li>
+          <li><a href="services.html#umrah">Umrah &amp; pilgrimage</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h3>Get in touch</h3>
+        <p><a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp the desk</a></p>
+        <p><a href="mailto:hello@drivequicktravels.com">hello@drivequicktravels.com</a></p>
+        <p>Mon–Sat, 9am–7pm</p>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>© <span data-year></span> Drive Quick Travels</p>
+      <p class="footer-note">International and Umrah travel is subject to supplier availability, authorised partners and the visa rules for your passport. Photographs from Unsplash.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
